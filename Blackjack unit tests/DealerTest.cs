@@ -19,7 +19,7 @@ namespace Blackjack_unit_tests
             dealer_logic_true4();
             
         }
-
+         
         public void dealer_logic_true1()
         {
             //arrange
