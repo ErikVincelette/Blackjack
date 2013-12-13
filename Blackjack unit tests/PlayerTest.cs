@@ -191,7 +191,7 @@ namespace Blackjack_unit_tests
             p.blackjack_win();
 
             short actual = p.Player_Bet;
-            Assert.AreEqual(final_bet, actual, "Wrong!");
+            Assert.AreEqual(final_bet, actual, "Blackjack Win!");
 
         }
 
@@ -206,7 +206,7 @@ namespace Blackjack_unit_tests
             p.loss();
 
             short actual = p.Player_Bet;
-            Assert.AreEqual(final_bet, actual, "Wrong!");
+            Assert.AreEqual(final_bet, actual, "Blackjack loss!");
 
         }
         
