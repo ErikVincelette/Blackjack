@@ -30,8 +30,8 @@ namespace Blackjack_unit_tests
             Player p = new Player();
             p.add_card(c1);
             p.add_card(c2);
-            short starting_bet = 10;
-            short final_bet = 20;
+            int starting_bet = 10;
+            int final_bet = 20;
             p.Player_Bet = starting_bet;
             p.bets[0] = 10;
 
@@ -40,7 +40,7 @@ namespace Blackjack_unit_tests
 
             //act            
             p.calculate_win(d.Hand_Value);
-            short actual = p.Player_Bet;
+            int actual = p.Player_Bet;
 
             //Assert
             Assert.AreEqual(final_bet, actual, "Player wins!");
@@ -56,8 +56,8 @@ namespace Blackjack_unit_tests
             Player p = new Player();
             p.add_card(c1);
             p.add_card(c2);
-            short starting_bet = 10;
-            short final_bet = 0;
+            int starting_bet = 10;
+            int final_bet = 0;
             p.Player_Bet = starting_bet;
             p.bets[0] = 10;
 
@@ -66,7 +66,7 @@ namespace Blackjack_unit_tests
 
             //act            
             p.calculate_win(d.Hand_Value);
-            short actual = p.Player_Bet;
+            int actual = p.Player_Bet;
 
             //Assert
             Assert.AreEqual(final_bet, actual, "Dealer wins!");
@@ -82,8 +82,8 @@ namespace Blackjack_unit_tests
             Player p = new Player();
             p.add_card(c1);
             p.add_card(c2);
-            short starting_bet = 10;
-            short final_bet = 20;
+            int starting_bet = 10;
+            int final_bet = 20;
             p.Player_Bet = starting_bet;
             p.bets[0] = 10;
 
@@ -92,7 +92,7 @@ namespace Blackjack_unit_tests
 
             //act            
             p.calculate_win(d.Hand_Value);
-            short actual = p.Player_Bet;
+            int actual = p.Player_Bet;
 
             //Assert
             Assert.AreEqual(final_bet, actual, "Dealer bust!");
@@ -110,8 +110,8 @@ namespace Blackjack_unit_tests
             p.add_card(c1);
             p.add_card(c2);
             p.add_card(c3);
-            short starting_bet = 10;
-            short final_bet = 0;
+            int starting_bet = 10;
+            int final_bet = 0;
             p.Player_Bet = starting_bet;
             p.bets[0] = 10;
 
@@ -120,7 +120,7 @@ namespace Blackjack_unit_tests
 
             //act            
             p.calculate_win(d.Hand_Value);
-            short actual = p.Player_Bet;
+            int actual = p.Player_Bet;
 
             //Assert
             Assert.AreEqual(final_bet, actual, "Player bust!");
@@ -138,8 +138,8 @@ namespace Blackjack_unit_tests
             p.add_card(c1);
             p.add_card(c2);
             p.add_card(c3);
-            short starting_bet = 10;
-            short final_bet = 0;
+            int starting_bet = 10;
+            int final_bet = 0;
             p.Player_Bet = starting_bet;
             p.bets[0] = starting_bet;
 
@@ -148,7 +148,7 @@ namespace Blackjack_unit_tests
 
             //act            
             p.calculate_win(d.Hand_Value);
-            short actual = p.Player_Bet;
+            int actual = p.Player_Bet;
 
             //Assert
             Assert.AreEqual(final_bet, actual, "Dealer and player bust!");
@@ -164,8 +164,8 @@ namespace Blackjack_unit_tests
             Player p = new Player();
             p.add_card(c1);
             p.add_card(c2);
-            short starting_bet = 10;
-            short final_bet = 10;
+            int starting_bet = 10;
+            int final_bet = 10;
             p.Player_Bet = starting_bet;
             p.bets[0] = starting_bet;
 
@@ -174,7 +174,7 @@ namespace Blackjack_unit_tests
 
             //act            
             p.calculate_win(d.Hand_Value);
-            short actual = p.Player_Bet;
+            int actual = p.Player_Bet;
 
             //Assert
             Assert.AreEqual(final_bet, actual, "Dealer bust!");
@@ -184,13 +184,13 @@ namespace Blackjack_unit_tests
         [TestMethod]
         public void blackjack_win()
         {
-            short starting_bet = 10;
-            short final_bet = 20;
+            int starting_bet = 10;
+            int final_bet = 20;
             Player p = new Player();
             p.Player_Bet = starting_bet;
             p.blackjack_win();
 
-            short actual = p.Player_Bet;
+            int actual = p.Player_Bet;
             Assert.AreEqual(final_bet, actual, "Blackjack Win!");
 
         }
@@ -198,14 +198,14 @@ namespace Blackjack_unit_tests
         [TestMethod]
         public void blackjack_loss()
         {        
-            short starting_bet = 10;
-            short final_bet = 0;
+            int starting_bet = 10;
+            int final_bet = 0;
             Player p = new Player();
             p.bets[0] = starting_bet;
             p.Player_Bet = starting_bet;
             p.loss();
 
-            short actual = p.Player_Bet;
+            int actual = p.Player_Bet;
             Assert.AreEqual(final_bet, actual, "Blackjack loss!");
 
         }
@@ -346,15 +346,15 @@ namespace Blackjack_unit_tests
             p.Player_Money = 20;
             p.bets[0] = 10;
             p.Player_Bet = 10;
-            short expected_money = 10;
-            short expected_total = 20;
+            int expected_money = 10;
+            int expected_total = 20;
             bool expected = true;
 
             //Act
             bool actual = p.split_logic();
-            short actual_money = p.Player_Money;
-            short actual_bet = p.bets[1];
-            short actual_total = p.Player_Bet;
+            int actual_money = p.Player_Money;
+            int actual_bet = p.bets[1];
+            int actual_total = p.Player_Bet;
 
             Assert.AreEqual(expected_money, actual_bet, "Player bet should be 10");
             Assert.AreEqual(expected_money, actual_money, "Player money should be 10");
@@ -371,14 +371,14 @@ namespace Blackjack_unit_tests
             p.Player_Money = 0;
             p.bets[0] = 10;
             p.Player_Bet = 10;
-            short expected_money = 0;
-            short expected_total = 10;
+            int expected_money = 0;
+            int expected_total = 10;
             bool expected = false;
 
             //Act
             bool actual = p.split_logic();
-            short actual_money = p.Player_Money;            
-            short actual_total = p.Player_Bet;
+            int actual_money = p.Player_Money;            
+            int actual_total = p.Player_Bet;
 
             Assert.AreEqual(expected_money, actual_money, "Player money should be 10");
             Assert.AreEqual(expected_total, actual_total, "Total player bet should be 10");
